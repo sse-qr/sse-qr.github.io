@@ -1,6 +1,12 @@
 (async() => {
 
 
+const onload_promise = new Promise((resolve, reject) => {
+  window.onload = resolve;
+});
+
+await onload_promise;
+
 const sleep = (millis) => new Promise((resolve, reject) => setTimeout(resolve, millis));
 
 //https://stackoverflow.com/questions/5448545/how-to-retrieve-get-parameters-from-javascript/
